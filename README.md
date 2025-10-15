@@ -32,7 +32,7 @@ Vibe Coding 是一個展示如何在 Kilo Code 中使用 BMad Method 進行結�
 
 ```bash
 # 安裝 BMad Method 到您的專案
-npx bmad-method install -f -d .
+npx bmad-method install
 ```
 
 安裝完成後，您會看到：
