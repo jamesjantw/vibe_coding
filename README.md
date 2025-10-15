@@ -37,7 +37,7 @@ npx bmad-method install
 
 安裝完成後，您會看到：
 - `.bmad-core/` - 核心框架和代理文件
-- `docs/` - 架構和故事文件目錄
+- `docs/` - 架構和故事文件目錄(請自己建立)
 - `web-bundles/` - 預建的網路套件
 
 ### 2. VS Code / Kilo Code 設定
