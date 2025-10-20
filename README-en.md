@@ -4,9 +4,9 @@ Vibe Coding is an example project demonstrating how to use BMad Method for struc
 
 ## 🌐 Language Selection / 语言选择
 
-- [繁體中文 (Traditional Chinese)](../README.md)
-- [简体中文 (Simplified Chinese)](../zh-cn/README.md)
-- [English](README.md)
+- [繁體中文 (Traditional Chinese)](README.md)
+- [简体中文 (Simplified Chinese)](README-zh-cn.md)
+- [English](README-en.md)
 
 ## 📊 Project Statistics
 
@@ -290,15 +290,9 @@ A: Review QA's specific feedback and resolve issues
 
 ### Advanced Reading
 - [BMad Method User Guide](.bmad-core/user-guide.md) - Complete usage instructions
-- [Architecture Standards](docs/architecture/coding-standards.md) - Coding standards
-  - [Simplified Chinese版](coding-standards-zh-cn.md)
-  - [English版](coding-standards-en.md)
-- [Testing Strategy](docs/architecture/testing-strategy.md) - Quality assurance
-  - [Simplified Chinese版](testing-strategy-zh-cn.md)
-  - [English版](testing-strategy-en.md)
-- [Definition of Done](docs/architecture/definition-of-done.md) - Delivery standards
-  - [Simplified Chinese版](definition-of-done-zh-cn.md)
-  - [English版](definition-of-done-en.md)
+- [Architecture Standards](docs/architecture/coding-standards-en.md) - Coding standards
+- [Testing Strategy](docs/architecture/testing-strategy-en.md) - Quality assurance
+- [Definition of Done](docs/architecture/definition-of-done-en.md) - Delivery standards
 
 ### Community & Support
 - **Discord Community**: [Join BMad Method Community](https://discord.gg/gk8jAdXWmj)

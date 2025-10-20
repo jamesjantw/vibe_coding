@@ -4,9 +4,9 @@ Vibe Coding 是一个展示如何在 Kilo Code 中使用 BMad Method 进行结�
 
 ## 🌐 语言选择 / Language Selection
 
-- [繁体中文 (Traditional Chinese)](../README.md)
-- [简体中文 (Simplified Chinese)](README.md)
-- [English](../en/README.md)
+- [繁体中文 (Traditional Chinese)](README.md)
+- [简体中文 (Simplified Chinese)](README-zh-cn.md)
+- [English](README-en.md)
 
 ## 📊 项目统计
 
@@ -290,15 +290,9 @@ A: 检阅 QA 的具体反馈并解决问题
 
 ### 进阶阅读
 - [BMad Method 用户指南](.bmad-core/user-guide.md) - 完整的使用说明
-- [架构标准](docs/architecture/coding-standards.md) - 编码规范
-  - [简体中文版](coding-standards-zh-cn.md)
-  - [English版](coding-standards-en.md)
-- [测试策略](docs/architecture/testing-strategy.md) - 质量保证
-  - [简体中文版](testing-strategy-zh-cn.md)
-  - [English版](testing-strategy-en.md)
-- [完成定义](docs/architecture/definition-of-done.md) - 交付标准
-  - [简体中文版](definition-of-done-zh-cn.md)
-  - [English版](definition-of-done-en.md)
+- [架构标准](docs/architecture/coding-standards-zh-cn.md) - 编码规范
+- [测试策略](docs/architecture/testing-strategy-zh-cn.md) - 质量保证
+- [完成定义](docs/architecture/definition-of-done-zh-cn.md) - 交付标准
 
 ### 社区与支持
 - **Discord 社区**: [加入 BMad Method 社区](https://discord.gg/gk8jAdXWmj)

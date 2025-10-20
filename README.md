@@ -5,8 +5,8 @@ Vibe Coding 是一個展示如何在 Kilo Code 中使用 BMad Method 進行結�
 ## 🌐 語言選擇 / Language Selection
 
 - [繁體中文 (Traditional Chinese)](README.md)
-- [简体中文 (Simplified Chinese)](zh-cn/README.md)
-- [English](en/README.md)
+- [简体中文 (Simplified Chinese)](README-zh-cn.md)
+- [English](README-en.md)
 
 ## 📊 專案統計
 
@@ -291,14 +291,14 @@ A: 檢閱 QA 的具體回饋並解決問題
 ### 進階閱讀
 - [BMad Method 用戶指南](.bmad-core/user-guide.md) - 完整的使用說明
 - [架構標準](docs/architecture/coding-standards.md) - 編碼規範
-  - [简体中文版](coding-standards-zh-cn.md)
-  - [English版](coding-standards-en.md)
+  - [简体中文版](docs/architecture/coding-standards-zh-cn.md)
+  - [English版](docs/architecture/coding-standards-en.md)
 - [測試策略](docs/architecture/testing-strategy.md) - 品質保證
-  - [简体中文版](testing-strategy-zh-cn.md)
-  - [English版](testing-strategy-en.md)
+  - [简体中文版](docs/architecture/testing-strategy-zh-cn.md)
+  - [English版](docs/architecture/testing-strategy-en.md)
 - [完成定義](docs/architecture/definition-of-done.md) - 交付標準
-  - [简体中文版](definition-of-done-zh-cn.md)
-  - [English版](definition-of-done-en.md)
+  - [简体中文版](docs/architecture/definition-of-done-zh-cn.md)
+  - [English版](docs/architecture/definition-of-done-en.md)
 
 ### 社群與支援
 - **Discord 社群**: [加入 BMad Method 社群](https://discord.gg/gk8jAdXWmj)
