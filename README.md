@@ -5,8 +5,8 @@ Vibe Coding 是一個展示如何在 Kilo Code 中使用 BMad Method 進行結�
 ## 🌐 語言選擇 / Language Selection
 
 - [繁體中文 (Traditional Chinese)](README.md)
-- [简体中文 (Simplified Chinese)](README-zh-cn.md)
-- [English](README-en.md)
+- [简体中文 (Simplified Chinese)](docs/zh-cn/README.md)
+- [English](docs/en/README.md)
 
 ## 📊 專案統計
 

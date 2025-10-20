@@ -4,9 +4,9 @@ Vibe Coding is an example project demonstrating how to use BMad Method for struc
 
 ## 🌐 Language Selection / 语言选择
 
-- [繁體中文 (Traditional Chinese)](README.md)
-- [简体中文 (Simplified Chinese)](README-zh-cn.md)
-- [English](README-en.md)
+- [繁體中文 (Traditional Chinese)](../README.md)
+- [简体中文 (Simplified Chinese)](../zh-cn/README.md)
+- [English](README.md)
 
 ## 📊 Project Statistics
 
