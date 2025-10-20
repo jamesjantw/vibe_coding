@@ -2,6 +2,12 @@
 
 Vibe Coding 是一個展示如何在 Kilo Code 中使用 BMad Method 進行結構化敏捷開發的範例專案。
 
+## 🌐 語言選擇 / Language Selection
+
+- [繁體中文 (Traditional Chinese)](README.md)
+- [简体中文 (Simplified Chinese)](README-zh-cn.md)
+- [English](README-en.md)
+
 ## 📊 專案統計
 
 [![BMad Method](https://img.shields.io/badge/BMad-Method-blue)](https://github.com/bmadcode/bmad-method)
