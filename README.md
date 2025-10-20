@@ -291,8 +291,14 @@ A: 檢閱 QA 的具體回饋並解決問題
 ### 進階閱讀
 - [BMad Method 用戶指南](.bmad-core/user-guide.md) - 完整的使用說明
 - [架構標準](docs/architecture/coding-standards.md) - 編碼規範
+  - [简体中文版](docs/architecture/zh-cn/coding-standards-zh-cn.md)
+  - [English版](docs/architecture/en/coding-standards-en.md)
 - [測試策略](docs/architecture/testing-strategy.md) - 品質保證
+  - [简体中文版](docs/architecture/zh-cn/testing-strategy-zh-cn.md)
+  - [English版](docs/architecture/en/testing-strategy-en.md)
 - [完成定義](docs/architecture/definition-of-done.md) - 交付標準
+  - [简体中文版](docs/architecture/zh-cn/definition-of-done-zh-cn.md)
+  - [English版](docs/architecture/en/definition-of-done-en.md)
 
 ### 社群與支援
 - **Discord 社群**: [加入 BMad Method 社群](https://discord.gg/gk8jAdXWmj)
