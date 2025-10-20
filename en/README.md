@@ -291,14 +291,14 @@ A: Review QA's specific feedback and resolve issues
 ### Advanced Reading
 - [BMad Method User Guide](.bmad-core/user-guide.md) - Complete usage instructions
 - [Architecture Standards](docs/architecture/coding-standards.md) - Coding standards
-  - [Simplified Chinese版](docs/architecture/zh-cn/coding-standards-zh-cn.md)
-  - [English版](docs/architecture/en/coding-standards-en.md)
+  - [Simplified Chinese版](coding-standards-zh-cn.md)
+  - [English版](coding-standards-en.md)
 - [Testing Strategy](docs/architecture/testing-strategy.md) - Quality assurance
-  - [Simplified Chinese版](docs/architecture/zh-cn/testing-strategy-zh-cn.md)
-  - [English版](docs/architecture/en/testing-strategy-en.md)
+  - [Simplified Chinese版](testing-strategy-zh-cn.md)
+  - [English版](testing-strategy-en.md)
 - [Definition of Done](docs/architecture/definition-of-done.md) - Delivery standards
-  - [Simplified Chinese版](docs/architecture/zh-cn/definition-of-done-zh-cn.md)
-  - [English版](docs/architecture/en/definition-of-done-en.md)
+  - [Simplified Chinese版](definition-of-done-zh-cn.md)
+  - [English版](definition-of-done-en.md)
 
 ### Community & Support
 - **Discord Community**: [Join BMad Method Community](https://discord.gg/gk8jAdXWmj)
