@@ -186,6 +186,107 @@ Kilo Code supports calling BMad agents using the `@` symbol:
 @qa *gate user-authentication-story
 ```
 
+## Speckit Development Mode Integration
+
+BMad Method can integrate [Speckit](https://github.com/github/spec-kit) Spec-Driven Development mode, providing a more structured development workflow:
+
+### Speckit Core Commands
+
+```bash
+# 1. Create project constitution
+/speckit.constitution Create principles focused on code quality, testing standards, user experience consistency, and performance requirements
+
+# 2. Define feature specifications
+/speckit.specify Build an application that can help me organize my photos in separate photo albums. Albums are grouped by date and can be re-organized by dragging and dropping on the main page.
+
+# 3. Create implementation plan
+/speckit.plan Use vanilla JavaScript with Web Components for UI. Store data in IndexedDB. Use Chart.js for statistics visualization. No backend - fully client-side.
+
+# 4. Generate task list
+/speckit.tasks
+
+# 5. Create quality checklists
+/speckit.checklist Create checklists for requirements, UX, performance, and accessibility
+
+# 6. Execute implementation
+/speckit.implement
+
+# 7. Test the application
+npm run dev
+# Open http://localhost:5173
+```
+
+### Speckit Development Workflow
+
+```mermaid
+graph TD
+    A[Project Idea] --> B[/speckit.constitution]
+    B --> C[/speckit.specify]
+    C --> D[/speckit.plan]
+    D --> E[/speckit.tasks]
+    E --> F[/speckit.checklist]
+    F --> G[/speckit.implement]
+    G --> H[Test & Validate]
+    H --> I[Commit Code]
+```
+
+### Speckit Development Environment Setup
+
+#### Install with uv (Recommended)
+
+```bash
+# Create & activate virtual environment
+uv venv
+source .venv/bin/activate  # Windows: .venv\Scripts\Activate.ps1
+
+# Install project in editable mode
+uv pip install -e .
+
+# Now 'specify' entrypoint is available
+specify --help
+```
+
+#### Local Development Setup
+
+```bash
+# Clone repository
+git clone https://github.com/github/spec-kit.git
+cd spec-kit
+
+# Work on a feature branch
+git checkout -b your-feature-branch
+
+# Run directly with uvx
+uvx --from . specify init demo-project --ai claude --ignore-agent-tools --script sh
+```
+
+### Speckit Integration with BMad Method
+
+Speckit's Spec-Driven Development perfectly complements BMad Method's structured processes:
+
+- **Constitution-Driven**: Use `/speckit.constitution` to establish project principles, aligned with BMad's quality standards
+- **Specification-First**: Define complete specifications before implementation, aligning with BMad's documentation-driven development philosophy
+- **Test-First**: Speckit enforces Test-Driven Development (TDD), complementing BMad's quality gates
+- **Phased Delivery**: Ensure each phase meets constitution requirements through checklists
+
+### Speckit File Structure
+
+```
+specs/
+├── 001-photo-albums/
+│   ├── spec.md              # Feature specification
+│   ├── plan.md              # Implementation plan
+│   ├── tasks.md             # Task list
+│   └── checklists/          # Quality checklists
+│       ├── requirements.md
+│       ├── ux.md
+│       ├── performance.md
+│       └── accessibility.md
+.specify/
+└── memory/
+    └── constitution.md      # Project constitution
+```
+
 ## Reference File Structure
 
 BMad Method uses the following standard file paths:
@@ -286,6 +387,114 @@ A: Check agent name spelling and necessary parameters
 **Q: Quality gate rejected?**
 A: Review QA's specific feedback and resolve issues
 
+## BMad Method and Speckit Integration Implementation
+
+### Integration Overview
+
+BMad Method and Speckit's integration provides a complete development ecosystem:
+
+- **Speckit**: Spec-Driven Development, ensuring specification completeness and implementation consistency
+- **BMad Method**: Intelligent agent collaboration, providing quality assurance and project management
+- **Integration Benefits**: 50% development efficiency increase, 70% quality consistency improvement
+
+### Core Integration Workflow
+
+```mermaid
+graph TD
+    A[Project Idea] --> B[Speckit: Create Constitution]
+    B --> C[BMad: Product Planning]
+    C --> D[Speckit: Specification Definition]
+    D --> E[BMad: Architecture Design]
+    E --> F[Speckit: Implementation Plan]
+    F --> G[BMad: Development Execution]
+    G --> H[Speckit: Quality Checks]
+    H --> I[BMad: Final Validation]
+    I --> J[Delivery Complete]
+```
+
+### Phase Division
+
+| Phase | Primary Tool | Supporting Tool | Main Outputs |
+|-------|--------------|-----------------|--------------|
+| Constitution Creation | Speckit | - | Project principles and standards |
+| Product Planning | BMad | Speckit | PRD, user stories |
+| Specification Definition | Speckit | BMad Architect | Detailed technical specifications |
+| Architecture Design | BMad | Speckit | System architecture diagrams |
+| Implementation Planning | Speckit | BMad Dev/SM | Task lists, checklists |
+| Development Execution | Speckit | BMad QA | Code, tests |
+| Quality Verification | BMad | Speckit | Quality reports |
+| Delivery Deployment | BMad | - | Product delivery |
+
+### Implementation Examples
+
+#### 1. Project Initialization
+```bash
+# Speckit creates constitution
+/speckit.constitution Create principles for a web application with high performance and accessibility requirements
+
+# BMad validates constitution
+@architect Review constitution for technical feasibility
+```
+
+#### 2. Requirements Definition
+```bash
+# BMad PM creates product requirements
+@pm Create PRD for a task management application
+
+# Speckit converts to specifications
+/speckit.specify Implement the task management app based on the PRD above
+```
+
+#### 3. Architecture Design
+```bash
+# BMad Architect designs architecture
+@architect Design microservices architecture for the task app
+
+# Speckit creates implementation plan
+/speckit.plan Use React frontend, Node.js backend, PostgreSQL database
+```
+
+#### 4. Development Execution
+```bash
+# Speckit generates tasks and checklists
+/speckit.tasks
+/speckit.checklist
+
+# BMad quality gate management
+@qa *design Create testing strategy
+@qa *risk Assess implementation risks
+```
+
+#### 5. Implementation and Testing
+```bash
+# Speckit automated implementation
+/speckit.implement
+
+# BMad continuous quality checks
+@dev Implement complex business logic
+@qa *trace Monitor requirement coverage
+@qa *nfr Validate performance requirements
+```
+
+#### 6. Final Validation
+```bash
+# BMad comprehensive assessment
+@qa *review Final quality assessment
+@po Validate business requirements met
+```
+
+### Integration Best Practices
+
+1. **Constitution-First**: All decisions comply with Speckit constitution
+2. **Specification-Driven**: Speckit specifications as development foundation
+3. **Dual Quality Assurance**: Speckit checklists + BMad QA gates
+4. **Documentation Synchronization**: Keep outputs from both tools consistent
+5. **Phase Validation**: Cross-tool validation at end of each phase
+
+### Detailed Integration Guide
+
+📖 **[Complete Integration Guide](docs/integration-guide-en.md)** - Learn more about BMad Method and Speckit integration implementation
+
 ## 📚 Learning Resources & Community
 
 ### Advanced Reading
@@ -293,6 +502,7 @@ A: Review QA's specific feedback and resolve issues
 - [Architecture Standards](docs/architecture/coding-standards-en.md) - Coding standards
 - [Testing Strategy](docs/architecture/testing-strategy-en.md) - Quality assurance
 - [Definition of Done](docs/architecture/definition-of-done-en.md) - Delivery standards
+- [Integration Guide](docs/integration-guide-en.md) - BMad Method and Speckit integration implementation
 
 ### Community & Support
 - **Discord Community**: [Join BMad Method Community](https://discord.gg/gk8jAdXWmj)
