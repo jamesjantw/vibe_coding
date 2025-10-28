@@ -220,12 +220,12 @@ npm run dev
 
 ```mermaid
 graph TD
-    A[Project Idea] --> B[/speckit.constitution]
-    B --> C[/speckit.specify]
-    C --> D[/speckit.plan]
-    D --> E[/speckit.tasks]
-    E --> F[/speckit.checklist]
-    F --> G[/speckit.implement]
+    A[Project Idea] --> B["/speckit.constitution"]
+    B --> C["/speckit.specify"]
+    C --> D["/speckit.plan"]
+    D --> E["/speckit.tasks"]
+    E --> F["/speckit.checklist"]
+    F --> G["/speckit.implement"]
     G --> H[Test & Validate]
     H --> I[Commit Code]
 ```
