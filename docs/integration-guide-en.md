@@ -8,14 +8,14 @@ This guide explains how to effectively combine BMad Method and Speckit in projec
 
 ```mermaid
 graph TD
-    A[Project Idea] --> B[Speckit: Create Constitution]
-    B --> C[BMad: Product Planning]
-    C --> D[Speckit: Specification Definition]
-    D --> E[BMad: Architecture Design]
-    E --> F[Speckit: Implementation Plan]
-    F --> G[BMad: Development Execution]
-    G --> H[Speckit: Quality Checks]
-    H --> I[BMad: Final Validation]
+    A[Project Idea] --> B["Speckit: Create Constitution"]
+    B --> C["BMad: Product Planning"]
+    C --> D["Speckit: Specification Definition"]
+    D --> E["BMad: Architecture Design"]
+    E --> F["Speckit: Implementation Plan"]
+    F --> G["BMad: Development Execution"]
+    G --> H["Speckit: Quality Checks"]
+    H --> I["BMad: Final Validation"]
     I --> J[Delivery Complete]
 ```
 

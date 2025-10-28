@@ -8,14 +8,14 @@
 
 ```mermaid
 graph TD
-    A[專案想法] --> B[Speckit: 建立憲法]
-    B --> C[BMad: 產品規劃階段]
-    C --> D[Speckit: 規範定義]
-    D --> E[BMad: 架構設計階段]
-    E --> F[Speckit: 實作計劃]
-    F --> G[BMad: 開發階段]
-    G --> H[Speckit: 任務執行]
-    H --> I[BMad: 品質保證]
+    A[專案想法] --> B["Speckit: 建立憲法"]
+    B --> C["BMad: 產品規劃階段"]
+    C --> D["Speckit: 規範定義"]
+    D --> E["BMad: 架構設計階段"]
+    E --> F["Speckit: 實作計劃"]
+    F --> G["BMad: 開發階段"]
+    G --> H["Speckit: 任務執行"]
+    H --> I["BMad: 品質保證"]
     I --> J[交付與迭代]
 ```
 
