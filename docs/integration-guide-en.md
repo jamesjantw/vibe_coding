@@ -1,8 +1,12 @@
-# BMad Method and Speckit Integration Guide
+# BMad Method V6 Alpha and Speckit Integration Guide
+
+**Version**: V6 Alpha (6.0.0-alpha.6)
 
 ## Overview
 
-This guide explains how to effectively combine BMad Method and Speckit in project development, providing a structured and efficient development process.
+This guide explains how to effectively combine BMad Method V6 Alpha and Speckit in project development, providing a structured and efficient development process.
+
+**Important Changes**: V6 Alpha uses workflow system (Workflow), command format is `*workflow-name`
 
 ## Integration Architecture
 
@@ -35,13 +39,18 @@ graph TD
 
 ### Phase 2: Product Planning (Requirements Definition)
 
-**Using BMad Method:**
+**Using BMad Method V6 Alpha:**
 ```bash
-# PM agent creates product requirements document
-@pm Create a comprehensive PRD for the application with detailed user stories, acceptance criteria, and success metrics
+# 1. Initialize workflow first (if new project)
+*workflow-init
 
-# UX Expert designs user experience
-@ux Create wireframes and user journey maps for the key user flows
+# 2. PM agent creates product requirements document
+*prd
+# Workflow will guide creating PRD with detailed user stories, acceptance criteria, and success metrics
+
+# 3. UX Designer creates UX design (if project has UI)
+*ux
+# Workflow will guide creating wireframes and user journey maps
 ```
 
 **Speckit Integration:**
@@ -64,13 +73,16 @@ graph TD
 
 ### Phase 4: Architecture Design (System Design)
 
-**Using BMad Method:**
+**Using BMad Method V6 Alpha:**
 ```bash
-# Architect agent designs system architecture
-@architect Design a scalable architecture based on the Speckit specification. Consider the constitution principles and performance requirements.
+# Architect agent creates architecture document
+*create-architecture
+# Workflow will automatically read PRD and Epic files, create architecture based on Speckit specification
+# Consider constitution principles and performance requirements
 
-# Early QA assessment
-@qa *risk Evaluate risks in the proposed architecture
+# Solutioning gate check (validate planning consistency)
+*solutioning-gate-check
+# Validate PRD, UX, Architecture, Epics are aligned
 ```
 
 **Speckit Integration:**
@@ -198,7 +210,7 @@ source .venv/bin/activate
 uv pip install -e .
 
 # Install BMad Method
-npx bmad-method install
+npx bmad-method@alpha install
 ```
 
 ### IDE Configuration

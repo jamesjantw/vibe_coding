@@ -1,4 +1,6 @@
-# 完成定義 (Definition of Done)
+# BMad Method V6 Alpha - 通用完成定義 (Definition of Done)
+
+**BMad Method 版本:** V6 Alpha (6.0.0-alpha.6)
 
 ## 概述
 

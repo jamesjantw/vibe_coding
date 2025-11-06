@@ -1,4 +1,6 @@
-# BMad Method - 通用编码标准 (Coding Standards)
+# BMad Method V6 Alpha - 通用编码标准 (Coding Standards)
+
+**BMad Method 版本:** V6 Alpha (6.0.0-alpha.6)
 
 **版本:** 1.0
 **适用于:** 所有程序语言和框架

@@ -1,4 +1,6 @@
-# BMad Method - 通用测试策略
+# BMad Method V6 Alpha - 通用测试策略
+
+**BMad Method 版本:** V6 Alpha (6.0.0-alpha.6)
 
 ## 测试金字塔 (Testing Pyramid)
 

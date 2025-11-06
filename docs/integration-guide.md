@@ -1,8 +1,12 @@
-# BMad Method 與 Speckit 整合指南
+# BMad Method V6 Alpha 與 Speckit 整合指南
+
+**版本**: V6 Alpha (6.0.0-alpha.6)
 
 ## 概述
 
-本指南說明如何在專案開發過程中有效搭配使用 BMad Method 與 Speckit，提供結構化且高效的開發流程。
+本指南說明如何在專案開發過程中有效搭配使用 BMad Method V6 Alpha 與 Speckit，提供結構化且高效的開發流程。
+
+**重要變更**: V6 Alpha 使用工作流程系統（Workflow），指令格式為 `*workflow-name`
 
 ## 整合架構
 
@@ -35,13 +39,18 @@ graph TD
 
 ### 階段 2: 產品規劃 (需求定義)
 
-**使用 BMad Method:**
+**使用 BMad Method V6 Alpha:**
 ```bash
-# PM 代理建立產品需求文件
-@pm Create a comprehensive PRD for the application with detailed user stories, acceptance criteria, and success metrics
+# 1. 先初始化工作流程（如果是新專案）
+*workflow-init
 
-# UX Expert 設計使用者體驗
-@ux Create wireframes and user journey maps for the key user flows
+# 2. PM 代理建立產品需求文件
+*prd
+# 工作流程會引導建立 PRD，包含詳細的使用者故事、驗收標準和成功指標
+
+# 3. UX Designer 建立 UX 設計（如果專案有 UI）
+*ux
+# 工作流程會引導建立線框圖和使用者旅程地圖
 ```
 
 **Speckit 整合:**
@@ -64,13 +73,16 @@ graph TD
 
 ### 階段 4: 架構設計 (系統設計)
 
-**使用 BMad Method:**
+**使用 BMad Method V6 Alpha:**
 ```bash
-# Architect 代理設計系統架構
-@architect Design a scalable architecture based on the Speckit specification. Consider the constitution principles and performance requirements.
+# Architect 代理建立架構文件
+*create-architecture
+# 工作流程會自動讀取 PRD 和 Epic 文件，基於 Speckit 規範建立架構
+# 考量憲法原則和效能要求
 
-# 早期 QA 評估
-@qa *risk Evaluate risks in the proposed architecture
+# 方案門檻檢查（驗證規劃一致性）
+*solutioning-gate-check
+# 驗證 PRD、UX、Architecture、Epics 是否對齊
 ```
 
 **Speckit 整合:**
@@ -99,11 +111,14 @@ graph TD
 /speckit.checklist Create checklists for requirements, UX, performance, accessibility, and security
 ```
 
-**使用 BMad Method:**
+**使用 BMad Method V6 Alpha:**
 ```bash
-# QA 代理制定詳細測試策略
-@qa *design Create comprehensive testing strategy for all user stories
-@qa *risk Perform detailed risk assessment for high-priority features
+# 注意：V6 Alpha 的測試策略主要在實作階段進行
+# 品質檢查包含在 code-review 工作流程中
+
+# 查看當前工作流程狀態
+*workflow-status
+# 會顯示下一步建議的工作流程
 ```
 
 ### 階段 7: 開發執行 (實作階段)
@@ -114,12 +129,24 @@ graph TD
 /speckit.implement
 ```
 
-**使用 BMad Method:**
+**使用 BMad Method V6 Alpha:**
 ```bash
-# 開發過程中持續品質檢查
-@dev Implement features following TDD principles
-@qa *trace Monitor requirement coverage during development
-@qa *nfr Validate non-functional requirements
+# 1. 初始化衝刺規劃（僅執行一次）
+*sprint-planning
+
+# 2. 建立故事
+*create-story
+
+# 3. 建立故事技術上下文（建議）
+*story-context
+
+# 4. 實作故事（遵循 TDD 原則）
+*dev-story
+# 工作流程會自動實作功能並包含測試
+
+# 5. 程式碼審查（品質檢查）
+*code-review
+# 包含完整的程式碼品質檢查、測試覆蓋率分析、NFR 驗證
 ```
 
 **整合工作流程:**
@@ -130,14 +157,15 @@ graph TD
 
 ### 階段 8: 品質驗證 (測試與驗收)
 
-**使用 BMad Method:**
+**使用 BMad Method V6 Alpha:**
 ```bash
-# 完整品質評估
-@qa *review Perform comprehensive quality assessment
-@qa *gate Update quality gate status
+# 程式碼審查已完成品質評估
+*code-review
+# 包含完整的品質評估、測試覆蓋率分析、安全性檢查
 
-# PO 驗收
-@po Validate that all acceptance criteria are met
+# 查看工作流程狀態
+*workflow-status
+# 確認所有故事已完成並驗證
 ```
 
 **Speckit 整合:**
@@ -146,11 +174,15 @@ graph TD
 
 ### 階段 9: 交付與學習 (完成與改進)
 
-**使用 BMad Method:**
+**使用 BMad Method V6 Alpha:**
 ```bash
-# 最終驗收和部署準備
-@sm Review the completed work and prepare deployment
-@architect Create deployment and operations documentation
+# Epic 完成後回顧
+*epic-retrospective
+# SM 代理會回顧完成的工作並準備部署
+
+# 查看最終狀態
+*workflow-status
+# 確認所有工作流程已完成
 ```
 
 ## 最佳實踐
@@ -177,17 +209,19 @@ graph TD
 
 ## 角色分工
 
-| 階段 | Speckit 角色 | BMad Method 角色 | 主要責任 |
-|------|-------------|------------------|----------|
-| 初始化 | `/speckit.constitution` | - | 建立專案原則 |
-| 規劃 | - | `@pm`, `@ux` | 需求和體驗設計 |
-| 規範 | `/speckit.specify` | `@architect` | 技術規範定義 |
-| 設計 | - | `@architect`, `@qa` | 系統架構設計 |
-| 計劃 | `/speckit.plan` | `@dev`, `@sm` | 實作計劃制定 |
-| 準備 | `/speckit.checklist` | `@qa` | 品質策略制定 |
-| 開發 | `/speckit.implement` | `@dev`, `@qa` | 功能實作 |
-| 驗證 | - | `@qa`, `@po` | 品質驗證 |
-| 交付 | - | `@sm`, `@architect` | 部署和文件 |
+| 階段 | Speckit 角色 | BMad Method V6 Alpha 工作流程 | 主要責任 |
+|------|-------------|---------------------------|----------|
+| 初始化 | `/speckit.constitution` | `*workflow-init` | 建立專案原則和工作流程追蹤 |
+| 規劃 | - | `*prd`, `*ux` | 需求和體驗設計 |
+| Epic 建立 | - | `*create-epics-and-stories` | 建立 Epic 和故事 |
+| 規範 | `/speckit.specify` | - | 技術規範定義 |
+| 設計 | - | `*create-architecture` | 系統架構設計 |
+| 方案驗證 | - | `*solutioning-gate-check` | 驗證規劃一致性 |
+| 計劃 | `/speckit.plan` | `*sprint-planning` | 實作計劃制定 |
+| 準備 | `/speckit.checklist` | - | 品質檢查清單 |
+| 開發 | `/speckit.implement` | `*create-story`, `*story-context`, `*dev-story` | 功能實作 |
+| 驗證 | - | `*code-review` | 品質驗證 |
+| 交付 | - | `*epic-retrospective` | 回顧和部署準備 |
 
 ## 工具鏈整合
 
@@ -198,8 +232,8 @@ uv venv
 source .venv/bin/activate
 uv pip install -e .
 
-# 安裝 BMad Method
-npx bmad-method install
+# 安裝 BMad Method V6 Alpha
+npx bmad-method@alpha install
 ```
 
 ### IDE 配置
@@ -235,9 +269,15 @@ A: 使用 Speckit 的模組化規範結構，結合 BMad Method 的多代理協�
 
 ## 總結
 
-BMad Method 與 Speckit 的整合提供了一個完整的開發生態系統：
+BMad Method V6 Alpha 與 Speckit 的整合提供了一個完整的開發生態系統：
 - **Speckit** 確保規範完整性和實作一致性
-- **BMad Method** 提供智慧代理協作和品質保證
+- **BMad Method V6 Alpha** 提供工作流程系統和智慧代理協作
 - **整合流程** 實現高效、可靠的軟體交付
+
+**V6 Alpha 新特性：**
+- 工作流程系統取代舊版任務，提供更結構化的開發流程
+- `*workflow-name` 指令格式簡化操作
+- `workflow-init` 和 `workflow-status` 自動追蹤進度
+- 每個工作流程建議使用新對話，避免上下文限制
 
 這種搭配使用的方式結合了自動化工具的效率和人工智慧代理的靈活性，為現代軟體開發提供了最佳實踐框架。

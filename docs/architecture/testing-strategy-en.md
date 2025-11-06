@@ -1,4 +1,6 @@
-# BMad Method - Universal Testing Strategy
+# BMad Method V6 Alpha - Universal Testing Strategy
+
+**BMad Method Version:** V6 Alpha (6.0.0-alpha.6)
 
 ## Testing Pyramid (Testing Pyramid)
 

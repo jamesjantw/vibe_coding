@@ -1,6 +1,9 @@
-# BMad Method - Agent Prompts Collection
+# BMad Method V6 Alpha - Agent Prompts Collection
 
-This document collects commonly used prompt templates and instructions for various BMad Method Agents. These prompts can help you interact more effectively with AI agents in different scenarios.
+This document collects commonly used prompt templates and workflow instructions for various BMad Method V6 Alpha Agents. These prompts can help you interact more effectively with AI agents in different scenarios.
+
+**Version**: V6 Alpha (6.0.0-alpha.6)  
+**Important Changes**: V6 uses workflow system (Workflow) replacing old tasks (Tasks), command format is `*workflow-name`
 
 ## 📋 Document Structure
 

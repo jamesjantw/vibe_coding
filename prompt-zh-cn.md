@@ -1,6 +1,9 @@
-# BMad Method - Agent Prompts 集合
+# BMad Method V6 Alpha - Agent Prompts 集合
 
-这份文档收集了各个 BMad Method Agent 常用的 prompt 模板和指令。这些 prompt 可以帮助你在不同场景下更有效地与 AI 代理互动。
+这份文档收集了各个 BMad Method V6 Alpha Agent 常用的 prompt 模板和工作流程指令。这些 prompt 可以帮助你在不同场景下更有效地与 AI 代理互动。
+
+**版本**: V6 Alpha (6.0.0-alpha.6)  
+**重要变更**: V6 使用工作流程系统（Workflow）取代旧版任务（Tasks），指令格式为 `*workflow-name`
 
 ## 📋 文档结构
 

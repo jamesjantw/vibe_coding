@@ -1,6 +1,6 @@
-# Vibe Coding - BMad Method 開發指南
+# Vibe Coding - BMad Method V6 Alpha 開發指南
 
-Vibe Coding 是一個展示如何在 Kilo Code 中使用 BMad Method 進行結構化敏捷開發的範例專案。
+Vibe Coding 是一個展示如何在 Kilo Code 中使用 BMad Method V6 Alpha 進行結構化敏捷開發的範例專案。
 
 ## 🌐 語言選擇 / Language Selection
 
@@ -13,20 +13,32 @@ Vibe Coding 是一個展示如何在 Kilo Code 中使用 BMad Method 進行結�
 [![BMad Method](https://img.shields.io/badge/BMad-Method-blue)](https://github.com/bmadcode/bmad-method)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Discord](https://img.shields.io/discord/1234567890?color=blue&label=Discord)](https://discord.gg/gk8jAdXWmj)
+[![Version](https://img.shields.io/badge/Version-6.0.0--alpha.6-orange)](https://github.com/bmad-code-org/BMAD-METHOD)
 
-**專案狀態**: 活躍開發中 🚀
-**支援語言**: JavaScript, TypeScript, Python, Java, C#, Go 等
-**適用 IDE**: Kilo Code, VS Code, Cursor, Windsurf 等
+**專案狀態**: 活躍開發中 🚀  
+**BMad Method 版本**: V6 Alpha (6.0.0-alpha.6)  
+**支援語言**: JavaScript, TypeScript, Python, Java, C#, Go 等  
+**適用 IDE**: Kilo Code, VS Code, Cursor, Windsurf, Claude Code 等
 
-## 🚀 為什麼選擇 BMad Method？
+## 🚀 為什麼選擇 BMad Method V6？
 
-**BMad Method** 是一個革命性的 AI 驅動開發框架，結合了：
+**BMad Method V6 Alpha** 是一個革命性的 AI 驅動開發框架，結合了：
 - 🤖 **智慧代理協作** - 多角色 AI 代理協同工作
-- 📋 **結構化流程** - 從規劃到交付的完整工作流程
+- 📋 **結構化工作流程系統** - 全新的互動式工作流程（Workflow）取代舊版任務（Tasks）
 - 🎯 **品質保證** - 內建測試策略和品質門檻
 - 🔄 **持續改進** - 基於回饋的迭代優化
+- 🎨 **規模自適應** - 自動根據專案複雜度調整規劃深度
+
+### V6 Alpha 核心新特性
+
+- **工作流程系統** - 使用互動式工作流程取代舊版任務和模板
+- **簡化指令** - 使用 `*workflow-name` 或自然語言啟動工作流程
+- **自動追蹤** - `workflow-init` 自動建立專案追蹤，`workflow-status` 隨時查看進度
+- **三種規劃軌跡** - Quick Flow、BMad Method、Enterprise Method
+- **上下文管理** - 建議每個工作流程使用新對話，避免上下文限制
 
 ### 核心優勢
+
 - **提升開發效率** - 減少重複工作，專注於創造性任務
 - **確保品質一致性** - 標準化的流程和檢查點
 - **降低溝通成本** - AI 代理處理例行溝通
@@ -34,21 +46,21 @@ Vibe Coding 是一個展示如何在 Kilo Code 中使用 BMad Method 進行結�
 
 ## 快速開始
 
-### 1. 安裝 BMad Method
+### 1. 安裝 BMad Method V6 Alpha
 
 ```bash
-# 安裝 BMad Method 到您的專案
-npx bmad-method install
+# 安裝 BMad Method V6 Alpha 到您的專案
+npx bmad-method@alpha install
 ```
 
 安裝完成後，您會看到：
-- `.bmad-core/` - 核心框架和代理文件
-- `docs/` - 架構和故事文件目錄(請自己建立)
-- `web-bundles/` - 預建的網路套件
+- `bmad/` - 核心框架、代理和工作流程文件
+- `docs/` - 架構和故事文件目錄（自動建立）
+- `.cursor/rules/bmad/` - Cursor IDE 規則文件（如果使用 Cursor）
 
-### 2. VS Code / Kilo Code 設定
+### 2. VS Code / Kilo Code / Cursor 設定
 
-為了獲得最佳的 BMad Method 使用體驗，請安裝以下 VS Code 擴充功能：
+為了獲得最佳的 BMad Method V6 使用體驗，請安裝以下 VS Code 擴充功能：
 
 #### 必要擴充功能
 - **Markdown All in One** - Markdown 編輯和預覽
@@ -60,456 +72,427 @@ npx bmad-method install
 - **Todo Tree** - TODO 項目追蹤
 - **Better Comments** - 增強註解功能
 
-#### Kilo Code 特定設定
-如果您使用 Kilo Code，請確保：
-1. 啟用 `@` 符號代理呼叫功能
-2. 設定適當的模式切換（code, architect, qa 等）
-3. 配置自動儲存以避免工作遺失
+#### IDE 特定設定
+
+**Kilo Code:**
+- 啟用 `@` 符號代理呼叫功能
+- 設定適當的模式切換（code, architect, qa 等）
+- 配置自動儲存以避免工作遺失
+
+**Cursor:**
+- BMad Method 規則已自動安裝到 `.cursor/rules/bmad/`
+- 使用 `@bmad/` 前綴引用特定代理或工作流程
+
+**Claude Code:**
+- 參考 [Claude Code 設定指南](bmad/docs/ide-info/claude-code.md)
 
 ### 3. 認識代理角色
 
-BMad Method 提供以下代理角色：
+BMad Method V6 提供以下代理角色：
 
-| 代理 | 角色 | 使用時機 |
-|------|------|----------|
-| **PM** | 產品經理 | 建立 PRD、定義需求 |
-| **Architect** | 架構師 | 設計系統架構 |
-| **Dev** | 開發者 | 實現功能和測試 |
-| **QA** | 測試架構師 | 品質保證和測試策略 |
-| **SM** | Scrum Master | 敏捷流程管理 |
-| **PO** | 產品負責人 | 驗證和優先順序 |
-| **BMad-Master** | 多功能代理 | 通用任務處理 |
+| 代理 | 角色 | 主要工作流程 | 使用時機 |
+|------|------|------------|----------|
+| **Analyst** | 分析師 | `*workflow-init`, `*workflow-status`, `*brainstorm-project`, `*research` | 專案初始化、進度追蹤、研究和腦力激盪 |
+| **PM** | 產品經理 | `*prd`, `*tech-spec`, `*create-epics-and-stories` | 建立 PRD、技術規格、Epic 和故事 |
+| **Architect** | 架構師 | `*create-architecture`, `*solutioning-gate-check` | 設計系統架構、驗證方案完整性 |
+| **SM** | Scrum Master | `*sprint-planning`, `*create-story`, `*story-context`, `*epic-retrospective` | 衝刺規劃、故事管理、回顧 |
+| **Dev** | 開發者 | `*dev-story`, `*code-review` | 實作功能、程式碼審查 |
+| **UX Designer** | UX 設計師 | `*ux` | 建立 UX 設計文件 |
+| **TEA** | 測試架構師 | 測試策略和品質保證 | 品質保證和測試策略 |
+| **Technical Writer** | 技術文件撰寫 | 文件生成 | 技術文件撰寫 |
+
+### 4. 初始化工作流程
+
+**重要：每個工作流程建議使用新對話，以避免上下文限制**
+
+```bash
+# 1. 載入 Analyst 代理
+# 在您的 IDE 中開啟 Analyst 代理文件或使用 @analyst
+
+# 2. 執行工作流程初始化
+*workflow-init
+# 或使用自然語言："執行工作流程初始化"
+```
+
+`workflow-init` 會引導您：
+- 描述專案目標
+- 選擇專案類型（新專案/既有專案）
+- 選擇規劃軌跡（Quick Flow / BMad Method / Enterprise Method）
+- 建立 `bmm-workflow-status.yaml` 追蹤文件
+
+## V6 Alpha 工作流程系統
+
+### 工作流程指令格式
+
+V6 支援多種指令格式：
+
+```bash
+# 方式 1: 使用 * 前綴（推薦）
+*workflow-init
+*prd
+*create-architecture
+*sprint-planning
+*create-story
+*dev-story
+*code-review
+
+# 方式 2: 使用自然語言
+"執行工作流程初始化"
+"建立 PRD"
+"建立架構文件"
+
+# 方式 3: 使用菜單選項
+# 代理會顯示可用工作流程選單，選擇編號即可
+```
+
+### 核心工作流程
+
+#### 專案管理
+
+| 工作流程 | 代理 | 說明 |
+|---------|------|------|
+| `*workflow-init` | Analyst | 初始化專案工作流程追蹤 |
+| `*workflow-status` | 任何代理 | 查看當前進度和下一步建議 |
+
+#### 規劃階段（Phase 1-2）
+
+| 工作流程 | 代理 | 適用軌跡 | 說明 |
+|---------|------|---------|------|
+| `*brainstorm-project` | Analyst | 所有 | 專案腦力激盪（可選） |
+| `*research` | Analyst | 所有 | 領域研究（可選） |
+| `*product-brief` | Analyst | BMad Method/Enterprise | 產品簡報（可選，僅綠地專案） |
+| `*prd` | PM | BMad Method/Enterprise | 產品需求文件（Level 2-4） |
+| `*tech-spec` | PM | Quick Flow | 技術規格（Level 0-1） |
+| `*create-epics-and-stories` | PM | BMad Method/Enterprise | 建立 Epic 和故事 |
+| `*ux` | UX Designer | 所有 | UX 設計文件（UI 專案） |
+
+#### 方案階段（Phase 3）
+
+| 工作流程 | 代理 | 適用軌跡 | 說明 |
+|---------|------|---------|------|
+| `*create-architecture` | Architect | BMad Method/Enterprise | 建立架構文件（Level 3-4 或建議） |
+| `*solutioning-gate-check` | Architect | BMad Method/Enterprise | 驗證所有規劃文件一致性 |
+
+#### 實作階段（Phase 4）
+
+| 工作流程 | 代理 | 說明 |
+|---------|------|------|
+| `*sprint-planning` | SM | 初始化衝刺追蹤（僅執行一次） |
+| `*epic-tech-context` | SM | 建立 Epic 技術上下文（每個 Epic） |
+| `*create-story` | SM | 建立下一個故事 |
+| `*story-context` | SM | 建立故事技術上下文（每個故事，建議） |
+| `*dev-story` | Dev | 實作故事 |
+| `*code-review` | Dev | 程式碼審查（建議） |
+| `*epic-retrospective` | SM | Epic 完成後回顧 |
 
 ## 開發工作流程
 
-### 階段 1: 規劃階段 (Planning Phase)
+### 完整開發流程圖
 
 ```mermaid
 graph TD
-    A[專案想法] --> B{需要研究?}
-    B -->|是| C[Analyst: 市場研究]
-    B -->|否| D{已有專案簡報?}
-    C --> D
-    D -->|是| E[PM: 從簡報建立 PRD]
-    D -->|否| F[PM: 互動式 PRD 建立]
-    E --> G[PRD 建立完成]
-    F --> G
-    G --> H{需要 UX?}
-    H -->|是| I[UX Expert: 建立前端規格]
-    H -->|否| J[Architect: 從 PRD 建立架構]
-    I --> K[UX Expert: 產生 UI 提示]
-    K --> L[Architect: 從 PRD + UX 建立架構]
-    J --> M{QA 早期策略?}
-    L --> M
-    M -->|是| N[QA: 對高風險區域進行早期測試架構輸入]
-    M -->|否| O[PO: 執行主檢查清單]
-```
-
-### 階段 2: 開發階段 (Development Phase)
-
-```mermaid
-graph TD
-    A[開發階段開始] --> B[SM: 檢閱前一個故事的開發/QA 筆記]
-    B --> C[SM: 從分片史詩 + 架構草擬下一個故事]
-    C --> D{高風險故事?}
-    D -->|是| E[QA: *risk + *design 於草擬故事]
-    D -->|否| F
-    E --> G[測試策略與風險設定檔已建立]
-    G --> H{PO: 驗證故事草擬?}
-    H -->|需要驗證| I[PO: 根據成品驗證故事草擬]
-    H -->|跳過驗證| J{使用者核准}
+    A[專案開始] --> B[Analyst: *workflow-init]
+    B --> C{選擇規劃軌跡}
+    
+    C -->|Quick Flow| D[PM: *tech-spec]
+    C -->|BMad Method| E[PM: *prd]
+    C -->|Enterprise| F[PM: *prd + 企業規劃]
+    
+    D --> G[SM: *sprint-planning]
+    E --> H{需要 UX?}
+    F --> H
+    
+    H -->|是| I[UX Designer: *ux]
+    H -->|否| J[Architect: *create-architecture]
     I --> J
-    J -->|核准| K[Dev: 循序任務執行]
-    J -->|需要變更| C
-    K --> L[Dev: 實作任務 + 測試]
-    L --> M{開發中 QA 檢查?}
-    M -->|是| N[QA: *trace 或 *nfr 用於早期驗證]
-    M -->|否| O
-    N --> P[Dev: 解決覆蓋/NFR 差距]
-    P --> O[Dev: 執行所有驗證]
-    O --> Q[Dev: 標記準備檢閱 + 新增筆記]
-    Q --> R{使用者驗證}
-    R -->|請求 QA 檢閱| S[QA: 測試架構檢閱 + 品質門檻]
-    R -->|核准無 QA| U[重要: 驗證所有迴歸測試和 linting 正在通過]
-    S --> T[QA: 測試架構分析 + 主動重構]
-    T --> V{QA 決定}
-    V -->|需要開發工作| K
-    V -->|核准| U
-    R -->|需要修復| K
-    U --> W[重要: 提交您的變更後再繼續!]
-    W --> X{需要更新門檻?}
-    X -->|是| Y[QA: *gate 更新狀態]
-    X -->|否| Z
-    Y --> Z[標記故事為完成]
-    Z --> B
+    
+    J --> K[Architect: *solutioning-gate-check]
+    K --> G
+    
+    G --> L[SM: *create-story]
+    L --> M[SM: *story-context]
+    M --> N[Dev: *dev-story]
+    N --> O[Dev: *code-review]
+    O --> P{故事完成?}
+    P -->|否| N
+    P -->|是| Q{還有故事?}
+    Q -->|是| L
+    Q -->|否| R[SM: *epic-retrospective]
+    
+    style B fill:#e3f2fd
+    style D fill:#c5e1a5
+    style E fill:#c5e1a5
+    style F fill:#c5e1a5
+    style J fill:#fff9c4
+    style G fill:#f3e5f5
+    style N fill:#a5d6a7
 ```
 
-## 在 Kilo Code 中使用 BMad Method
+### 階段 1: 分析階段（可選）
 
-Kilo Code 支援使用 `@` 符號呼叫 BMad 代理：
+```mermaid
+graph TD
+    A[Analyst: *workflow-init] --> B{需要腦力激盪?}
+    B -->|是| C[Analyst: *brainstorm-project]
+    B -->|否| D{需要研究?}
+    C --> D
+    D -->|是| E[Analyst: *research]
+    D -->|否| F{綠地專案?}
+    E --> F
+    F -->|是| G{需要產品簡報?}
+    F -->|否| H[階段 2: 規劃]
+    G -->|是| I[Analyst: *product-brief]
+    G -->|否| H
+    I --> H
+```
+
+### 階段 2: 規劃階段（必要）
+
+```mermaid
+graph TD
+    A[階段 2 開始] --> B{選擇的軌跡}
+    B -->|Quick Flow| C[PM: *tech-spec]
+    B -->|BMad Method| D[PM: *prd]
+    B -->|Enterprise| E[PM: *prd + 企業規劃]
+    
+    C --> F[階段 4: 實作]
+    D --> G{需要 UX?}
+    E --> G
+    
+    G -->|是| H[UX Designer: *ux]
+    G -->|否| I[PM: *create-epics-and-stories]
+    H --> I
+    I --> J[階段 3: 方案]
+```
+
+### 階段 3: 方案階段（BMad Method/Enterprise）
+
+```mermaid
+graph TD
+    A[階段 3 開始] --> B[Architect: *create-architecture]
+    B --> C[Architect: *solutioning-gate-check]
+    C --> D{驗證通過?}
+    D -->|否| E[修正規劃文件]
+    E --> C
+    D -->|是| F[階段 4: 實作]
+```
+
+### 階段 4: 實作階段（必要）
+
+```mermaid
+graph TD
+    A[階段 4 開始] --> B[SM: *sprint-planning]
+    B --> C[SM: *epic-tech-context]
+    C --> D[SM: *create-story]
+    D --> E[SM: *story-context]
+    E --> F[Dev: *dev-story]
+    F --> G[Dev: *code-review]
+    G --> H{審查通過?}
+    H -->|否| F
+    H -->|是| I{還有故事?}
+    I -->|是| D
+    I -->|否| J[SM: *epic-retrospective]
+    J --> K{還有 Epic?}
+    K -->|是| C
+    K -->|否| L[專案完成]
+```
+
+## 在 Kilo Code / Cursor 中使用 BMad Method V6
 
 ### 基本用法
 
 ```bash
+# 初始化工作流程
+*workflow-init
+
+# 查看進度
+*workflow-status
+
 # 建立產品需求文件
-@pm Create a PRD for a task management app
+*prd
 
-# 設計系統架構
-@architect Design the system architecture for the task app
+# 建立技術規格（Quick Flow）
+*tech-spec
 
-# 實作使用者認證
-@dev Implement user authentication with JWT tokens
+# 建立架構文件
+*create-architecture
 
-# 品質評估
-@qa *review user-authentication-story
+# 建立故事
+*create-story
+
+# 實作故事
+*dev-story
+
+# 程式碼審查
+*code-review
 ```
 
-### 品質門檻工作流程
+### 自然語言指令
+
+V6 代理支援自然語言，您也可以這樣說：
 
 ```bash
-# 風險評估 (故事草擬後)
-@qa *risk user-authentication-story
-
-# 測試策略設計 (風險評估後)
-@qa *design user-authentication-story
-
-# 需求追蹤 (開發中)
-@qa *trace user-authentication-story
-
-# 非功能性需求檢查
-@qa *nfr user-authentication-story
-
-# 完整品質評估 (開發完成)
-@qa *review user-authentication-story
-
-# 更新品質門檻狀態
-@qa *gate user-authentication-story
+# 自然語言範例
+"執行工作流程初始化"
+"我想建立一個 PRD"
+"幫我建立架構文件"
+"開始實作這個故事"
+"進行程式碼審查"
 ```
 
-## Speckit 開發模式整合
+### 工作流程狀態查詢
 
-BMad Method 整合 [Speckit](https://github.com/github/spec-kit) 的規範驅動開發 (Spec-Driven Development) 模式，可提供更結構化的開發流程：
-
-### Speckit 核心命令
+隨時使用 `*workflow-status` 查看進度：
 
 ```bash
-# 1. 建立專案憲法
-/speckit.constitution Create principles focused on code quality, testing standards, user experience consistency, and performance requirements
+# 載入任何代理後執行
+*workflow-status
 
-# 2. 定義功能規範
-/speckit.specify Build an application that can help me organize my photos in separate photo albums. Albums are grouped by date and can be re-organized by dragging and dropping on the main page.
-
-# 3. 建立實作計劃
-/speckit.plan Use vanilla JavaScript with Web Components for UI. Store data in IndexedDB. Use Chart.js for statistics visualization. No backend - fully client-side.
-
-# 4. 生成任務清單
-/speckit.tasks
-
-# 5. 建立品質檢查清單
-/speckit.checklist Create checklists for requirements, UX, performance, and accessibility
-
-# 6. 執行實作
-/speckit.implement
-
-# 7. 測試應用程式
-npm run dev
-# Open http://localhost:5173
+# 代理會告訴您：
+# - 當前階段
+# - 已完成的工作流程
+# - 下一步建議的工作流程
+# - 需要的代理
 ```
 
-### Speckit 開發流程
+## 規劃軌跡說明
 
-```mermaid
-graph TD
-    A[專案想法] --> B["/speckit.constitution"]
-    B --> C["/speckit.specify"]
-    C --> D["/speckit.plan"]
-    D --> E["/speckit.tasks"]
-    E --> F["/speckit.checklist"]
-    F --> G["/speckit.implement"]
-    G --> H[測試與驗證]
-    H --> I[提交程式碼]
+### Quick Flow（快速流程）
+
+**適用場景：** Level 0-1 專案（1-15 個故事）
+- 簡單功能、錯誤修復、小變更
+- 只需技術規格（tech-spec）
+- 跳過架構階段，直接進入實作
+
+**工作流程：**
+```
+workflow-init → tech-spec → sprint-planning → create-story → dev-story
 ```
 
-### Speckit 開發環境設定
+### BMad Method（標準方法）
 
-#### 使用 uv 安裝 (推薦)
+**適用場景：** Level 2-4 專案（10-50+ 個故事）
+- 產品、平台、複雜功能
+- 完整規劃：PRD + UX + Architecture
+- 推薦給大多數專案
 
-```bash
-# 建立並啟用虛擬環境
-uv venv
-source .venv/bin/activate  # Windows: .venv\Scripts\Activate.ps1
-
-# 以可編輯模式安裝專案
-uv pip install -e .
-
-# 現在可以使用 specify 命令
-specify --help
+**工作流程：**
+```
+workflow-init → prd → create-epics-and-stories → ux (可選) → 
+create-architecture → solutioning-gate-check → sprint-planning → 
+epic-tech-context → create-story → story-context → dev-story → code-review
 ```
 
-#### 本地開發設定
+### Enterprise Method（企業方法）
 
-```bash
-# 複製儲存庫
-git clone https://github.com/github/spec-kit.git
-cd spec-kit
+**適用場景：** Level 4 專案（30+ 個故事）
+- 企業需求、合規性、多租戶
+- BMad Method + 安全架構 + DevOps + 測試策略
+- 完整的企業級規劃
 
-# 在功能分支上工作
-git checkout -b your-feature-branch
-
-# 使用 uvx 直接執行
-uvx --from . specify init demo-project --ai claude --ignore-agent-tools --script sh
+**工作流程：**
+```
+BMad Method 流程 + 企業專用規劃階段
 ```
 
-### Speckit 與 BMad Method 的整合
+## 專案追蹤文件
 
-Speckit 的規範驅動開發完美補充了 BMad Method 的結構化流程：
+BMad Method V6 自動建立兩個追蹤文件：
 
-- **憲法驅動**: 使用 `/speckit.constitution` 建立專案原則，與 BMad 的品質標準對齊
-- **規範優先**: 先定義完整規範，再進行實作，符合 BMad 的文件驅動開發理念
-- **測試優先**: Speckit 強制測試驅動開發 (TDD)，與 BMad 的品質門檻相輔相成
-- **階段性交付**: 通過檢查清單確保每個階段都符合憲法要求
+### 1. `docs/bmm-workflow-status.yaml`
 
-### Speckit 檔案結構
+追蹤規劃和方案階段的進度：
+- 自動由 `workflow-init` 建立
+- 記錄所有工作流程的完成狀態
+- 使用 `workflow-status` 查看
 
-```
-specs/
-├── 001-photo-albums/
-│   ├── spec.md              # 功能規範
-│   ├── plan.md              # 實作計劃
-│   ├── tasks.md             # 任務清單
-│   └── checklists/          # 品質檢查清單
-│       ├── requirements.md
-│       ├── ux.md
-│       ├── performance.md
-│       └── accessibility.md
-.specify/
-└── memory/
-    └── constitution.md      # 專案憲法
-```
+### 2. `docs/sprint-status.yaml`
 
-## 參考文件結構
+追蹤實作階段的進度：
+- 自動由 `sprint-planning` 建立
+- 記錄所有 Epic 和故事的狀態
+- SM 和 Dev 代理使用此文件追蹤進度
 
-BMad Method 使用以下標準文件路徑：
-
-```
-docs/
-├── prd.md                    # 產品需求文件
-├── architecture.md           # 系統架構
-├── epics/                    # 分片史詩
-├── stories/                  # 分片故事
-└── qa/
-    ├── assessments/          # QA 評估
-    └── gates/               # 品質門檻
-```
-
-## 實例：任務管理應用開發
-
-讓我們看看如何使用 BMad Method 開發一個任務管理應用：
-
-### 步驟 1: 產品規劃
-
-```bash
-@pm Create a comprehensive PRD for a task management application with the following features:
-- User authentication and authorization
-- Task creation, editing, and deletion
-- Task categorization and prioritization
-- Due date management
-- User dashboard with task overview
-- Team collaboration features
-```
-
-### 步驟 2: 架構設計
-
-```bash
-@architect Design a scalable architecture for the task management app using:
-- Frontend: React with TypeScript
-- Backend: Node.js with Express
-- Database: PostgreSQL
-- Authentication: JWT
-- Real-time updates: WebSocket
-```
-
-### 步驟 3: 品質策略
-
-```bash
-# 對核心功能進行風險評估
-@qa *risk user-authentication
-@qa *design user-authentication
-
-# 開發期間追蹤
-@qa *trace user-authentication
-@qa *nfr user-authentication
-
-# 最終評估
-@qa *review user-authentication
-```
-
-### 步驟 4: 功能實作
-
-```bash
-@dev Implement user authentication with the following requirements:
-- Email/password registration and login
-- JWT token-based authentication
-- Password reset functionality
-- Secure password hashing
-- Input validation and sanitization
-```
+**重要：** 這些文件由代理自動更新，通常不需要手動編輯。
 
 ## 最佳實踐
 
 ### 開發原則
 
-1. **小步快跑**：將大型功能分解為小的、可管理的故事
-2. **持續整合**：經常提交變更並執行測試
-3. **品質優先**：在開發早期進行 QA 評估
-4. **文件驅動**：使用 PRD 和架構作為開發指南
-5. **迭代改進**：根據 QA 回饋持續改進
+1. **每個工作流程使用新對話** - 避免上下文限制和幻覺
+2. **小步快跑** - 將大型功能分解為小的、可管理的故事
+3. **持續整合** - 經常提交變更並執行測試
+4. **品質優先** - 使用 `code-review` 確保程式碼品質
+5. **文件驅動** - 使用 PRD 和架構作為開發指南
+6. **定期檢查狀態** - 使用 `workflow-status` 查看進度
 
 ### 代理使用建議
 
-- **PM**: 用於需求定義和優先順序設定
-- **Architect**: 用於技術決策和系統設計
-- **Dev**: 用於程式碼實作和單元測試
-- **QA**: 用於品質保證和風險管理
-- **SM**: 用於流程管理和衝刺規劃
-- **PO**: 用於驗收標準和業務價值驗證
+- **Analyst**: 專案初始化、進度追蹤、研究和腦力激盪
+- **PM**: 需求定義、PRD/技術規格建立、Epic 和故事管理
+- **Architect**: 架構設計、方案驗證
+- **SM**: 衝刺規劃、故事管理、回顧
+- **Dev**: 程式碼實作、程式碼審查
+- **UX Designer**: UI/UX 設計文件（UI 專案）
+
+### 工作流程最佳實踐
+
+1. **使用 200k+ 上下文模型** - Claude Sonnet 4.5、GPT-4 等
+2. **每個工作流程使用新對話** - 確保最大上下文容量
+3. **遵循工作流程順序** - 讓 `workflow-status` 引導您
+4. **不要跳過驗證步驟** - `solutioning-gate-check` 和 `code-review` 很重要
+5. **定期提交程式碼** - 完成故事後立即提交
 
 ## 故障排除
 
 ### 常見問題
 
-**Q: 安裝失敗？**
+**Q: 安裝失敗？**  
 A: 確保您有 Node.js ≥ 18 和 npm ≥ 9
 
-**Q: 代理沒有回應？**
-A: 檢查代理名稱拼寫和必要的參數
+**Q: 代理沒有回應工作流程指令？**  
+A: 
+- 檢查指令拼寫（使用 `*workflow-name` 格式）
+- 確保已載入正確的代理
+- 嘗試使用自然語言或菜單選項
 
-**Q: 品質門檻被拒絕？**
-A: 檢閱 QA 的具體回饋並解決問題
+**Q: 工作流程執行失敗？**  
+A: 
+- 檢查是否在正確的階段執行工作流程
+- 使用 `workflow-status` 查看當前狀態
+- 確保前置工作流程已完成
 
-## BMad Method 與 Speckit 整合實作
+**Q: 上下文限制問題？**  
+A: 
+- 使用新對話執行每個工作流程
+- 使用 200k+ 上下文的模型
+- 避免在同一對話中執行多個大型工作流程
 
-### 整合概述
-
-BMad Method 與 Speckit 的整合提供完整的開發生態系統：
-
-- **Speckit**: 規範驅動開發，確保規範完整性和實作一致性
-- **BMad Method**: 智慧代理協作，提供品質保證和專案管理
-- **整合效益**: 開發效率提升 50%，品質一致性提升 70%
-
-### 核心整合流程
-
-```mermaid
-graph TD
-    A[專案想法] --> B[Speckit: 建立憲法]
-    B --> C[BMad: 產品規劃]
-    C --> D[Speckit: 規範定義]
-    D --> E[BMad: 架構設計]
-    E --> F[Speckit: 實作計劃]
-    F --> G[BMad: 開發執行]
-    G --> H[Speckit: 品質檢查]
-    H --> I[BMad: 最終驗證]
-    I --> J[交付完成]
-```
-
-### 階段分工
-
-| 階段 | 主導工具 | 協作工具 | 主要產出 |
-|------|----------|----------|----------|
-| 憲法建立 | Speckit | - | 專案原則與標準 |
-| 產品規劃 | BMad | Speckit | PRD、使用者故事 |
-| 規範定義 | Speckit | BMad Architect | 詳細技術規範 |
-| 架構設計 | BMad | Speckit | 系統架構圖 |
-| 實作計劃 | Speckit | BMad Dev/SM | 任務清單、檢查清單 |
-| 開發執行 | Speckit | BMad QA | 程式碼、測試 |
-| 品質驗證 | BMad | Speckit | 品質報告 |
-| 交付部署 | BMad | - | 產品交付 |
-
-### 實作範例
-
-#### 1. 專案初始化
-```bash
-# Speckit 建立憲法
-/speckit.constitution Create principles for a web application with high performance and accessibility requirements
-
-# BMad 驗證憲法
-@architect Review constitution for technical feasibility
-```
-
-#### 2. 需求定義
-```bash
-# BMad PM 建立產品需求
-@pm Create PRD for a task management application
-
-# Speckit 轉換為規範
-/speckit.specify Implement the task management app based on the PRD above
-```
-
-#### 3. 架構設計
-```bash
-# BMad Architect 設計架構
-@architect Design microservices architecture for the task app
-
-# Speckit 建立實作計劃
-/speckit.plan Use React frontend, Node.js backend, PostgreSQL database
-```
-
-#### 4. 開發執行
-```bash
-# Speckit 生成任務和檢查清單
-/speckit.tasks
-/speckit.checklist
-
-# BMad 品質門檻管理
-@qa *design Create testing strategy
-@qa *risk Assess implementation risks
-```
-
-#### 5. 實作與測試
-```bash
-# Speckit 自動化實作
-/speckit.implement
-
-# BMad 持續品質檢查
-@dev Implement complex business logic
-@qa *trace Monitor requirement coverage
-@qa *nfr Validate performance requirements
-```
-
-#### 6. 最終驗證
-```bash
-# BMad 完整評估
-@qa *review Final quality assessment
-@po Validate business requirements met
-```
-
-### 整合最佳實踐
-
-1. **憲法優先**: 所有決策符合 Speckit 憲法
-2. **規範驅動**: Speckit 規範作為開發基礎
-3. **品質雙重保障**: Speckit 檢查清單 + BMad QA 門檻
-4. **文件同步**: 保持兩個工具的產出一致
-5. **階段驗證**: 每個階段結束前進行跨工具驗證
-
-### 詳細整合指南
-
-📖 **[完整整合指南](docs/integration-guide.md)** - 深入了解 BMad Method 與 Speckit 的搭配使用方法
+**Q: 找不到工作流程？**  
+A: 
+- 使用 `workflow-status` 查看可用工作流程
+- 檢查您選擇的規劃軌跡是否支援該工作流程
+- 確認代理已正確載入
 
 ## 📚 學習資源與社群
 
 ### 進階閱讀
-- [BMad Method 用戶指南](.bmad-core/user-guide.md) - 完整的使用說明
+
+- [BMad Method V6 快速開始指南](bmad/bmm/docs/quick-start.md) - 完整的使用說明
+- [BMM 完整文件](bmad/bmm/README.md) - 模組詳細說明
+- [工作流程文件](bmad/bmm/docs/workflows-planning.md) - 規劃工作流程詳解
 - [架構標準](docs/architecture/coding-standards.md) - 編碼規範
 - [測試策略](docs/architecture/testing-strategy.md) - 品質保證
 - [完成定義](docs/architecture/definition-of-done.md) - 交付標準
-- [整合指南](docs/integration-guide.md) - BMad Method 與 Speckit 整合實作
 
 ### 社群與支援
+
 - **Discord 社群**: [加入 BMad Method 社群](https://discord.gg/gk8jAdXWmj)
-- **GitHub**: [回報問題與建議](https://github.com/bmadcode/bmad-method/issues)
+- **GitHub**: [回報問題與建議](https://github.com/bmad-code-org/BMAD-METHOD/issues)
 - **YouTube**: [BMadCode 頻道](https://www.youtube.com/@BMadCode)
 
 ### 進階主題
+
 - **客製化代理** - 根據專案需求調整代理行為
 - **擴充套件包** - 遊戲開發、創意寫作等專業領域支援
 - **企業整合** - 大型團隊和企業環境的最佳實踐
@@ -518,12 +501,14 @@ graph TD
 ## 🎯 成功案例
 
 ### 適用場景
+
 - **新專案開發** - 從零開始的結構化開發
 - **既有專案重構** - 引入標準化流程
 - **團隊協作** - 多角色協同開發
 - **品質提升** - 建立可持續的開發標準
 
 ### 效益量化
+
 - **開發效率提升 40%** - 減少重複工作和溝通成本
 - **錯誤率降低 60%** - 內建品質檢查和測試策略
 - **交付時間縮短 30%** - 標準化流程和自動化工具
@@ -531,13 +516,13 @@ graph TD
 
 ## 🚀 開始使用
 
-1. **安裝 BMad Method**
-2. **閱讀用戶指南**
-3. **執行第一個專案**
-4. **加入社群分享經驗**
+1. **安裝 BMad Method V6 Alpha** - `npx bmad-method@alpha install`
+2. **執行工作流程初始化** - 載入 Analyst 代理，執行 `*workflow-init`
+3. **遵循工作流程指引** - 使用 `*workflow-status` 查看下一步
+4. **開始建立** - 按照建議執行各個工作流程
 
 ---
 
-*"BMad Method 不只是工具，更是開發團隊的超能力。讓 AI 處理重複工作，讓人類專注於創造。"*
+*"BMad Method V6 不只是工具，更是開發團隊的超能力。讓 AI 處理重複工作，讓人類專注於創造。"*
 
 *BMad Method 增強您的開發流程，而不是取代您的專業知識。*

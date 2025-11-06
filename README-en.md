@@ -1,6 +1,6 @@
-# Vibe Coding - BMad Method Development Guide
+# Vibe Coding - BMad Method V6 Alpha Development Guide
 
-Vibe Coding is an example project demonstrating how to use BMad Method for structured agile development in Kilo Code.
+Vibe Coding is an example project demonstrating how to use BMad Method V6 Alpha for structured agile development in Kilo Code.
 
 ## 🌐 Language Selection / 语言选择
 
@@ -14,9 +14,10 @@ Vibe Coding is an example project demonstrating how to use BMad Method for struc
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Discord](https://img.shields.io/discord/1234567890?color=blue&label=Discord)](https://discord.gg/gk8jAdXWmj)
 
-**Project Status**: Active development 🚀
-**Supported Languages**: JavaScript, TypeScript, Python, Java, C#, Go, etc.
-**Supported IDEs**: Kilo Code, VS Code, Cursor, Windsurf, etc.
+**Project Status**: Active development 🚀  
+**BMad Method Version**: V6 Alpha (6.0.0-alpha.6)  
+**Supported Languages**: JavaScript, TypeScript, Python, Java, C#, Go, etc.  
+**Supported IDEs**: Kilo Code, VS Code, Cursor, Windsurf, Claude Code, etc.
 
 ## 🚀 Why Choose BMad Method?
 
@@ -34,11 +35,11 @@ Vibe Coding is an example project demonstrating how to use BMad Method for struc
 
 ## Quick Start
 
-### 1. Install BMad Method
+### 1. Install BMad Method V6 Alpha
 
 ```bash
-# Install BMad Method to your project
-npx bmad-method install
+# Install BMad Method V6 Alpha to your project
+npx bmad-method@alpha install
 ```
 
 After installation, you'll see:
@@ -144,47 +145,44 @@ graph TD
     Z --> B
 ```
 
-## Using BMad Method in Kilo Code
+## V6 Alpha Workflow System
 
-Kilo Code supports calling BMad agents using the `@` symbol:
+### Workflow Command Format
 
-### Basic Usage
-
-```bash
-# Create product requirements document
-@pm Create a PRD for a task management app
-
-# Design system architecture
-@architect Design the system architecture for the task app
-
-# Implement user authentication
-@dev Implement user authentication with JWT tokens
-
-# Quality assessment
-@qa *review user-authentication-story
-```
-
-### Quality Gate Workflow
+V6 supports multiple command formats:
 
 ```bash
-# Risk assessment (after story drafting)
-@qa *risk user-authentication-story
+# Method 1: Use * prefix (Recommended)
+*workflow-init
+*prd
+*create-architecture
+*sprint-planning
+*create-story
+*dev-story
+*code-review
 
-# Test strategy design (after risk assessment)
-@qa *design user-authentication-story
+# Method 2: Use natural language
+"Run workflow initialization"
+"Create a PRD"
+"Create architecture document"
 
-# Requirements tracing (during development)
-@qa *trace user-authentication-story
-
-# Non-functional requirements check
-@qa *nfr user-authentication-story
-
-# Complete quality assessment (after development)
-@qa *review user-authentication-story
-
-# Update quality gate status
-@qa *gate user-authentication-story
+# Method 3: Use menu options
+# Agent will display available workflow menu, select by number
 ```
+
+### Core Workflows
+
+| Workflow | Agent | Description |
+|---------|-------|-------------|
+| `*workflow-init` | Analyst | Initialize project workflow tracking |
+| `*workflow-status` | Any Agent | Check current progress and next recommendations |
+| `*prd` | PM | Product Requirements Document (BMad Method/Enterprise) |
+| `*tech-spec` | PM | Technical Specification (Quick Flow) |
+| `*create-architecture` | Architect | Create architecture document |
+| `*sprint-planning` | SM | Initialize sprint tracking |
+| `*create-story` | SM | Create next story |
+| `*dev-story` | Dev | Implement story |
+| `*code-review` | Dev | Code review (recommended) |
 
 ## Speckit Development Mode Integration
 

@@ -1,6 +1,7 @@
-# BMad Method - Universal Coding Standards
+# BMad Method V6 Alpha - Universal Coding Standards
 
-**Version:** 1.0
+**BMad Method Version:** V6 Alpha (6.0.0-alpha.6)  
+**Document Version:** 1.0
 **Applies to:** All programming languages and frameworks
 **Date:** 2025-10-15
 

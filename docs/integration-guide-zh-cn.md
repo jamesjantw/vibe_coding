@@ -1,8 +1,12 @@
-# BMad Method 与 Speckit 整合指南
+# BMad Method V6 Alpha 与 Speckit 整合指南
+
+**版本**: V6 Alpha (6.0.0-alpha.6)
 
 ## 概述
 
-本指南解释如何在项目开发过程中有效结合 BMad Method 和 Speckit，提供结构化和高效的开发流程。
+本指南解释如何在项目开发过程中有效结合 BMad Method V6 Alpha 和 Speckit，提供结构化和高效的开发流程。
+
+**重要变更**: V6 Alpha 使用工作流程系统（Workflow），指令格式为 `*workflow-name`
 
 ## 整合架构
 
@@ -35,13 +39,18 @@ graph TD
 
 ### 阶段 2: 产品规划 (需求定义)
 
-**使用 BMad Method:**
+**使用 BMad Method V6 Alpha:**
 ```bash
-# PM 代理创建产品需求文档
-@pm Create a comprehensive PRD for the application with detailed user stories, acceptance criteria, and success metrics
+# 1. 先初始化工作流程（如果是新项目）
+*workflow-init
 
-# UX Expert 设计用户体验
-@ux Create wireframes and user journey maps for the key user flows
+# 2. PM 代理创建产品需求文档
+*prd
+# 工作流程会引导创建 PRD，包含详细的用户故事、验收标准和成功指标
+
+# 3. UX Designer 创建 UX 设计（如果项目有 UI）
+*ux
+# 工作流程会引导创建线框图和使用者旅程地图
 ```
 
 **Speckit 整合:**
@@ -64,13 +73,16 @@ graph TD
 
 ### 阶段 4: 架构设计 (系统设计)
 
-**使用 BMad Method:**
+**使用 BMad Method V6 Alpha:**
 ```bash
-# Architect 代理设计系统架构
-@architect Design a scalable architecture based on the Speckit specification. Consider the constitution principles and performance requirements.
+# Architect 代理创建架构文档
+*create-architecture
+# 工作流程会自动读取 PRD 和 Epic 文件，基于 Speckit 规范创建架构
+# 考量宪法原则和性能要求
 
-# 早期 QA 评估
-@qa *risk Evaluate risks in the proposed architecture
+# 方案门槛检查（验证规划一致性）
+*solutioning-gate-check
+# 验证 PRD、UX、Architecture、Epics 是否对齐
 ```
 
 **Speckit 整合:**
@@ -114,12 +126,24 @@ graph TD
 /speckit.implement
 ```
 
-**使用 BMad Method:**
+**使用 BMad Method V6 Alpha:**
 ```bash
-# 开发过程中持续质量检查
-@dev Implement features following TDD principles
-@qa *trace Monitor requirement coverage during development
-@qa *nfr Validate non-functional requirements
+# 1. 初始化冲刺规划（仅执行一次）
+*sprint-planning
+
+# 2. 创建故事
+*create-story
+
+# 3. 创建故事技术上下文（建议）
+*story-context
+
+# 4. 实作故事（遵循 TDD 原则）
+*dev-story
+# 工作流程会自动实作功能并包含测试
+
+# 5. 代码审查（质量检查）
+*code-review
+# 包含完整的代码质量检查、测试覆盖率分析、NFR 验证
 ```
 
 **整合工作流程:**
@@ -198,7 +222,7 @@ source .venv/bin/activate
 uv pip install -e .
 
 # 安装 BMad Method
-npx bmad-method install
+npx bmad-method@alpha install
 ```
 
 ### IDE 配置

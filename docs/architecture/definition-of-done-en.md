@@ -1,6 +1,7 @@
-# BMad Method - Universal Definition of Done
+# BMad Method V6 Alpha - Universal Definition of Done
 
-**Version:** 1.0
+**BMad Method Version:** V6 Alpha (6.0.0-alpha.6)  
+**Document Version:** 1.0
 **Applies to:** All project types
 **Date:** 2025-10-15
 
