@@ -314,10 +314,102 @@ Current issues: [現有問題]
 
 ## 🎯 任務特定 Prompt
 
-### 新功能開發 (V6 Alpha)
+### 完整開發流程 (V6 Alpha)
+
+這是 BMad Method V6 Alpha 的完整開發流程，適用於 BMad Method 和 Enterprise 軌跡：
 
 ```markdown
-# 完整流程：
+# ============================================
+# 階段 1: 專案初始化
+# ============================================
+
+# 1. 初始化工作流程
+*workflow-init
+# 或使用 Cursor IDE 格式：
+/bmad:bmm:workflows:workflow-init
+
+# ============================================
+# 階段 2: 既有專案文件化（僅既有專案需要）
+# ============================================
+
+# 2. 如果是既有專案（Brownfield），先建立專案文件
+/bmad:bmm:workflows:document-project
+
+# ============================================
+# 階段 3: 規劃階段
+# ============================================
+
+# 3. 建立產品需求文件
+/bmad:bmm:workflows:prd
+
+# ============================================
+# 階段 4: 方案階段
+# ============================================
+
+# 4. 建立架構文件
+/bmad:bmm:workflows:create-architecture
+
+# 5. 方案門檻檢查（驗證規劃一致性）
+/bmad:bmm:workflows:solutioning-gate-check
+
+# ============================================
+# 階段 5: 實作階段 - 初始化
+# ============================================
+
+# 6. 初始化衝刺規劃
+/bmad:bmm:workflows:sprint-planning
+
+# ============================================
+# 階段 6: Epic 循環（對每個 Epic 重複）
+# ============================================
+
+# **Epic 循環開始**
+
+# 7. 建立 Epic 技術上下文
+/bmad:bmm:workflows:epic-tech-context Epic x
+
+# ============================================
+# 階段 7: Story 循環（對每個 Story 重複）
+# ============================================
+
+# **Story 循環開始**
+
+# 8. 建立 Story x.1
+/bmad:bmm:workflows:create-story 建立 Story x.1
+
+# 9. 為 Story x.1 生成技術上下文 XML
+/bmad:bmm:workflows:story-context 為 Story x.1 生成技術上下文 XML
+
+# 10. 開始實作 Story x.1
+/bmad:bmm:workflows:dev-story 開始實作 Story x.1
+
+# 11. 程式碼審查 Story x.1
+/bmad:bmm:workflows:code-review Story x.1
+
+# **Story 循環結束**
+
+# ============================================
+# 階段 8: Epic 完成
+# ============================================
+
+# 12. Epic 回顧
+/bmad:bmm:workflows:retrospective Epic x
+
+# **Epic 循環結束**
+
+# ============================================
+# 注意事項：
+# ============================================
+# - 每個工作流程建議使用新對話執行
+# - 使用 *workflow-name 或 /bmad:bmm:workflows:workflow-name 格式
+# - 隨時使用 *workflow-status 查看進度
+# - Epic 和 Story 循環會根據實際情況重複執行
+```
+
+### 新功能開發 (V6 Alpha) - 快速參考
+
+```markdown
+# 簡化流程（快速參考）：
 # 1. 如果是新專案，先執行 workflow-init
 *workflow-init
 

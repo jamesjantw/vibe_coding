@@ -216,21 +216,122 @@ Conduct comprehensive quality assessment and provide:
 
 ## 🎯 Task-Specific Prompts
 
-### New Feature Development
+### Complete Development Workflow (V6 Alpha)
+
+This is the complete development workflow for BMad Method V6 Alpha, applicable to BMad Method and Enterprise tracks:
 
 ```markdown
-@dev Implement a new feature for [feature description]
+# ============================================
+# Phase 1: Project Initialization
+# ============================================
 
-Requirements:
-- [Specific requirements]
-- [Technical constraints]
-- [Quality standards]
+# 1. Initialize workflow
+*workflow-init
+# Or use Cursor IDE format:
+/bmad:bmm:workflows:workflow-init
 
-Please include:
-- Implementation plan
-- Code structure
-- Error handling
-- Unit tests
+# ============================================
+# Phase 2: Existing Project Documentation (Brownfield only)
+# ============================================
+
+# 2. If existing project (Brownfield), create project documentation first
+/bmad:bmm:workflows:document-project
+
+# ============================================
+# Phase 3: Planning Phase
+# ============================================
+
+# 3. Create Product Requirements Document
+/bmad:bmm:workflows:prd
+
+# ============================================
+# Phase 4: Solutioning Phase
+# ============================================
+
+# 4. Create architecture document
+/bmad:bmm:workflows:create-architecture
+
+# 5. Solutioning gate check (validate planning consistency)
+/bmad:bmm:workflows:solutioning-gate-check
+
+# ============================================
+# Phase 5: Implementation Phase - Initialization
+# ============================================
+
+# 6. Initialize sprint planning
+/bmad:bmm:workflows:sprint-planning
+
+# ============================================
+# Phase 6: Epic Cycle (Repeat for each Epic)
+# ============================================
+
+# **Epic cycle start**
+
+# 7. Create Epic technical context
+/bmad:bmm:workflows:epic-tech-context Epic x
+
+# ============================================
+# Phase 7: Story Cycle (Repeat for each Story)
+# ============================================
+
+# **Story cycle start**
+
+# 8. Create Story x.1
+/bmad:bmm:workflows:create-story Create Story x.1
+
+# 9. Generate technical context XML for Story x.1
+/bmad:bmm:workflows:story-context Generate technical context XML for Story x.1
+
+# 10. Start implementing Story x.1
+/bmad:bmm:workflows:dev-story Start implementing Story x.1
+
+# 11. Code review Story x.1
+/bmad:bmm:workflows:code-review Story x.1
+
+# **Story cycle end**
+
+# ============================================
+# Phase 8: Epic Completion
+# ============================================
+
+# 12. Epic retrospective
+/bmad:bmm:workflows:retrospective Epic x
+
+# **Epic cycle end**
+
+# ============================================
+# Notes:
+# ============================================
+# - Each workflow should be executed in a new conversation
+# - Use *workflow-name or /bmad:bmm:workflows:workflow-name format
+# - Use *workflow-status anytime to check progress
+# - Epic and Story cycles will repeat based on actual situation
+```
+
+### New Feature Development (V6 Alpha) - Quick Reference
+
+```markdown
+# Simplified workflow (quick reference):
+# 1. If new project, execute workflow-init first
+*workflow-init
+
+# 2. Create PRD or technical specification
+*prd              # BMad Method/Enterprise
+or
+*tech-spec        # Quick Flow
+
+# 3. Create Epics and stories (if using PRD)
+*create-epics-and-stories
+
+# 4. Create architecture (BMad Method/Enterprise)
+*create-architecture
+
+# 5. Start implementation
+*sprint-planning
+*create-story
+*story-context
+*dev-story
+*code-review
 ```
 
 ### Bug Fixes
